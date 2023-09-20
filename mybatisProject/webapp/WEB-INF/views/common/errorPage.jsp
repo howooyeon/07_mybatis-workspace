@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="common/menubar.jsp"/>
+<jsp:include page="menubar.jsp"/>
+
+	<h1 align="center">${ errorMsg }</h1>
+	
 </body>
 </html>
