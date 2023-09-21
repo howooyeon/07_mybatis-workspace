@@ -23,15 +23,14 @@ public class LoginController extends HttpServlet {
      */
     public LoginController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		String userId = request.getParameter("userId");
-//		String userPwd = request.getParameter("userPwd");
+		// String userId = request.getParameter("userId");
+		// String userPwd = request.getParameter("userPwd");
 		
 		Member m = new Member();
 		m.setUserId(request.getParameter("userId"));
@@ -46,16 +45,12 @@ public class LoginController extends HttpServlet {
 			request.getSession().setAttribute("loginMember", loginMember);
 			response.sendRedirect(request.getContextPath());
 		}
-		
-		
-		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

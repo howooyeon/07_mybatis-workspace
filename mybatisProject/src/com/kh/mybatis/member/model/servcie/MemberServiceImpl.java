@@ -1,8 +1,9 @@
 package com.kh.mybatis.member.model.servcie;
 
+import org.apache.ibatis.jdbc.SQL;
 import org.apache.ibatis.session.SqlSession;
 
-import com.kh.mybatis.common.template.Template;
+import static com.kh.mybatis.common.template.Template.*;
 import com.kh.mybatis.member.model.dao.MemberDao;
 import com.kh.mybatis.member.model.vo.Member;
 
@@ -29,7 +30,7 @@ public class MemberServiceImpl implements MemberService {
 		 */
 		//!!!!!!!!!!!!!!!!!!!!제일 핵심코드!!!!!!!!!!!!!!!!!!!
 		// 자료형 변수명 = getSqlSession이 template에 드감
-		SqlSession sqlSession = Template.getSqlSession();
+		SqlSession sqlSession = getSqlSession();
 		// 이때 mybatis-config.xml 문서 읽어들임
 		// 이때 등록시킨 mapper.xml 문서들도 다 읽어들여짐
 		
@@ -47,14 +48,18 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public Member loginMember(Member m) {
-		SqlSession sqlSession = Template.getSqlSession();
+		SqlSession sqlSession = getSqlSession();
 		Member loginMember = mDao.loginMember(sqlSession, m);
 		sqlSession.close();		
 		return loginMember;
 	}
+	
 
 	@Override
 	public int updateMember(Member m) {
+		SqlSession sqlSession = getSqlSession();
+//		Member updateMember = mDao.updateMember(sqlSession, m);
+		
 		return 0;
 	}
 
