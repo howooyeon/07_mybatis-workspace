@@ -13,6 +13,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
    <!-- typeAliases : VO/DTO 클래스들의 풀클래스명을 단순한 클래스명으로 사용하기 위해서 별칭을 등록할 수 있는 영역 -->
    <typeAliases>
    		<typeAlias type="com.kh.mybatis.member.model.vo.Member" alias="Member"/>
+   		<typeAlias type="com.kh.mybatis.board.model.vo.Board" alias="Board"/>
+   		<typeAlias type="com.kh.mybatis.board.model.vo.Reply" alias="Reply"/>
+   		
    </typeAliases>
    
    <!-- environment : mybatis에서 연동할 DB 정보들을 등록하는 영역 -->
@@ -48,8 +51,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
    </environments>
    
    <!--  * mapper : 실행할 sql 문들을 기록 해둔 mapper 파일들을 등록하는 영역 -->
-   <mappers>            <!-- 여기서 슬래시는 src || sourceCode? 뭐 그거다 -->
+   <mappers>            <!-- 여기서 슬래시는 src || resources 둘 중 하나다 -->
       <mapper resource="/mappers/member-mapper.xml"/>
+      <mapper resource="/mappers/board-mapper.xml"/>
    </mappers>
    
 

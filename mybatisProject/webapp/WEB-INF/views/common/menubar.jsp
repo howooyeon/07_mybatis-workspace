@@ -36,7 +36,7 @@
 		color: white;
 		margin: auto;
 		margin-top: 50px;
-		height: 400px;
+		height: 700px;
 	}
 
 </style>
