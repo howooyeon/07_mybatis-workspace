@@ -13,6 +13,7 @@ public class Pagination {
 		
 		if(endPage > maxPage) {
 			endPage = maxPage;
+			
 		}
 		
 		PageInfo pi = new PageInfo(listCount, currentPage, pageLimit, boardLimit, maxPage, startPage, endPage);

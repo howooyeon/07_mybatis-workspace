@@ -49,8 +49,13 @@ public class BoardSearchController extends HttpServlet {
 		PageInfo pi = Pagination.getPageInfo(searchCount, currentPage, 10, 5);
 		ArrayList<Board> list = bService.selectSearchList(map, pi);
 		System.out.println(list);
+		
 		request.setAttribute("pi", pi);
 		request.setAttribute("list", list);
+		
+		request.setAttribute("condition", condition);
+		request.setAttribute("keyword", keyword);
+		
 		request.getRequestDispatcher("WEB-INF/views/board/boardListView.jsp").forward(request, response);
 		
 		

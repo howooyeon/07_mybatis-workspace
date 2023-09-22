@@ -81,6 +81,12 @@ public class BoardServiceImpl implements BoardService{
 		return list;
 	}
 
+	public int deleteBoard(int boardNo) {
+		SqlSession sqlSession = getSqlSession();
+		int result = bDao.deleteBoard(sqlSession, boardNo);
+		return result;
+	}
+
 	
 
 }

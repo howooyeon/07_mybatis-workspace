@@ -42,6 +42,12 @@
                 </td>
             </tr>
         </table>
+        <form id="delete_form" action="delete.bo" method="post">
+            <p>
+                <input type="hidden" name="bno" value="${ b.boardNo }">
+            </p>
+            <input type="submit" value="삭제" style="margin-left: 50%;">
+            </form>
         <br>
         <table align="center" border="1">
             <tr>
@@ -56,7 +62,7 @@
             	<tr>
 	                <td>${ r.replyWriter }</td>
 	                <td>${ r.replyContent }</td>
-	                <td>${ r.createDate }<td>
+	                <td>${ r.createDate }</tr>
             	</tr>
             </c:forEach>
         </table>
